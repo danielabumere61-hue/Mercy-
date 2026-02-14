@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For Mercy 🌸</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Poppins:wght@300&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-red: #d63031;
+            --bg-gradient: linear-gradient(135deg, #fff5f5 0%, #fed7e2 100%);
+        }
+
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            font-family: 'Poppins', sans-serif;
+            background: var(--bg-gradient);
+        }
+
+        /* Floating Background */
+        #floating-container {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .float-item {
+            position: absolute;
+            bottom: -100px;
+            animation: moveUp linear infinite;
+        }
+
+        @keyframes moveUp {
+            to { transform: translateY(-120vh) rotate(360deg); }
+        }
+
+        /* Center Content */
+        .wrapper {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* The Envelope */
+        .envelope-container {
+            text-align: center;
+            cursor: pointer;
+            transition: opacity 0.5s ease;
+        }
+
+        .envelope {
+            position: relative;
+            width: 280px;
+            height: 180px;
+            background: var(--primary-red);
+            border-radius: 0 0 10px 10px;
+            box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+            margin-bottom: 20px;
+        }
+
+        .envelope:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-top: 100px solid #ff4d4d;
+            border-left: 140px solid transparent;
+            border-right: 140px solid transparent;
+        }
+
+        .heart-icon {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 40px;
+        }
+
+        /* The Letter Overlay (Hidden by default) */
+        #letter-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.95);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 100;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.5s ease;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        #letter-overlay.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .letter-paper {
+            background: #fff;
+            width: 100%;
+            max-width: 450px;
+            max-height: 85vh;
+            padding: 40px 25px;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            position: relative;
+            overflow-y: auto;
+            border: 1px solid #ffebeb;
+        }
+
+        .letter-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1.2rem;
+            color: #333;
+            line-height: 1.6;
+            text-align: left;
+        }
+
+        .letter-text h2 {
+            text-align: center;
+            color: var(--primary-red);
+            font-size: 1.8rem;
+            margin-top: 0;
+        }
+
+        .close-btn {
+            display: block;
+            margin: 20px auto 0;
+            background: var(--primary-red);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .hint {
+            color: var(--primary-red);
+            font-weight: bold;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+            40% {transform: translateY(-10px);}
+            60% {transform: translateY(-5px);}
+        }
+    </style>
+</head>
+<body>
+
+    <div id="floating-container"></div>
+
+    <div class="wrapper">
+        <div class="envelope-container" id="env-box" onclick="openLetter()">
+            <div class="envelope">
+                <div class="heart-icon">💌</div>
+            </div>
+            <p class="hint">Tap to open Mercy's letter</p>
+        </div>
+    </div>
+
+    <div id="letter-overlay">
+        <div class="letter-paper">
+            <div class="letter-text">
+                <h2>Happy Valentine’s Day, Mercy 🌸</h2>
+                <p>You know, some people come into your life quietly and somehow make everything feel a little lighter without even trying — that’s honestly what you do. ✨</p>
+                
+                <p>Your kindness, your smile, and the way you carry yourself have this calm, beautiful energy that stays with people long after conversations end. 😊</p>
+                
+                <p><strong>Remember the time we met in the lab? 😂🧪</strong> That's a memory I hold onto. I really appreciate having you in my life. Talking with you always feels natural, and somehow even ordinary moments become memorable. 🤍</p>
+                
+                <p>You might not realize it, but you have a way of making people feel important just by being yourself. 🌟</p>
+                
+                <p>Today felt like the perfect moment to remind you that you’re deeply valued, admired, and appreciated — not only for how you look, but for the heart you have and the warmth you give so effortlessly. 💖</p>
+                
+                <p>Wishing you a day filled with joy, little moments that make you smile, and all the warmth your heart deserves. Keep being the amazing person you are… because the world honestly feels better with you in it. 🌎✨</p>
+                
+                <p style="text-align: center; font-size: 1.4rem;"><strong>Happy Valentine’s Day 🤍</strong></p>
+            </div>
+            <button class="close-btn" onclick="closeLetter()">Close Letter</button>
+        </div>
+    </div>
+
+    <script>
+        function openLetter() {
+            document.getElementById('letter-overlay').classList.add('show');
+            document.getElementById('env-box').style.opacity = '0';
+        }
+
+        function closeLetter() {
+            document.getElementById('letter-overlay').classList.remove('show');
+            document.getElementById('env-box').style.opacity = '1';
+        }
+
+        function createFloatingElement() {
+            const container = document.getElementById('floating-container');
+            const icons = ['❤️', '💖', '🎈', '✨', '🌸'];
+            const el = document.createElement('div');
+            el.className = 'float-item';
+            el.innerHTML = icons[Math.floor(Math.random() * icons.length)];
+            el.style.left = Math.random() * 100 + 'vw';
+            el.style.fontSize = (Math.random() * 20 + 20) + 'px';
+            el.style.animationDuration = (Math.random() * 5 + 7) + 's';
+            el.style.opacity = Math.random() * 0.5 + 0.3;
+            
+            container.appendChild(el);
+            setTimeout(() => el.remove(), 10000);
+        }
+        setInterval(createFloatingElement, 500);
+    </script>
+</body>
+</html>
